@@ -1,0 +1,15 @@
+<div class="btn-group" role="group" aria-label="...">
+{{#each model.people as |person|}}
+  {{#link-to 'people.person' person.id}}
+    <button type="button" class="btn btn-default">
+      Hello {{person.name}}
+    </button>
+  {{/link-to}}
+{{/each}}
+</div>
+
+{{outlet}}
+
+<div class="salario">
+  El salario total es: {{totalSalary}}
+</div>
