@@ -12,6 +12,7 @@ export default Route.extend({
         name: person.name,
         title: person.isFemale ? 'Miss.' : 'Mr.',
         salary: person.salary,
+        gender: person.gender,
       };
     }
   }

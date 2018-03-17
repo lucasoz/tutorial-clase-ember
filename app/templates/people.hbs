@@ -1,12 +1,38 @@
-<div class="btn-group" role="group" aria-label="...">
-{{#each model.people as |person|}}
-  {{#link-to 'people.person' person.id}}
-    <button type="button" class="btn btn-default">
-      Hello {{person.name}}
-    </button>
-  {{/link-to}}
-{{/each}}
-</div>
+
+
+  {{#each model.people as |person|}}
+    {{#link-to 'people.person' person.id}}
+      <button type="button" class="btn btn-default" >
+        {{person.name}}
+      </button>
+    {{/link-to}}
+  {{/each}}
+
+  {{#each model.people as |person|}}
+    {{#link-to 'people'}}
+      <button type="button" class="btn btn-default" {{action "add" person}}>
+        Añadir al carro {{person.name}}
+      </button>
+    {{/link-to}}
+  {{/each}}
+
+  <button type="button" class="btn btn-default" {{action 'incrementSalary'}}>
+    Incrementar salario
+  </button>
+
+  <div class="page-header">
+    <h1><strong>Carro de compras</strong></h1>
+  </div>
+
+  <ul>
+    {{#each cart.items as |item|}}
+      <li>
+        {{item.name}}
+        <button {{action "remove" item}}>Remove</button>
+      </li>
+    {{/each}}
+  </ul>
+
 
 {{outlet}}
 

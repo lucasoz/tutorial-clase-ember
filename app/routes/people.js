@@ -43,15 +43,4 @@ export default Route.extend({
       ],
     };
   },
-
-  setupController(controller, model) {
-    this._super(...arguments);
-    const people = model.people;
-    const totalSalary = people.reduce(
-      (sumSalary, person) => sumSalary + person.salary,
-      0
-    );
-    controller.set('totalSalary', totalSalary);
-  },
-
 });
